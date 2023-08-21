@@ -1,0 +1,13 @@
+EXPLANATION:
+------------
+Section starts by creating a new database named "School" and then switches to using that database for the subsequent operations.
+Code creates a table named "Students" with columns to store student information, including student ID, first name, last name, date of birth, and gender. 
+The student ID is the primary key, ensuring uniqueness for each student record.
+Code creates a table named "Subjects" to store information about academic subjects. 
+Code creates a table named "Classes" to manage class information. 
+Create indexes on specific columns to improve query performance.
+The indexes are named idx_LastName for the "LastName" column in the "Students" table, idx_SubjectName for the "SubjectName" column in the "Subjects" table, and idx_ClassID for the "ClassID" column in the "Classes" table.
+Students' details, subject information, and class information are added using the provided INSERT statements.
+Finally, retrieve all records from the "Students," "Subjects," and "Classes" tables, respectively.
+
+GitHub Link: 
