@@ -10,4 +10,4 @@ The indexes are named idx_LastName for the "LastName" column in the "Students" t
 Students' details, subject information, and class information are added using the provided INSERT statements.
 Finally, retrieve all records from the "Students," "Subjects," and "Classes" tables, respectively.
 
-GitHub Link: 
+GitHub Link: https://github.com/KKaviya1/Phase3PracticeProject/tree/master/Section%202
