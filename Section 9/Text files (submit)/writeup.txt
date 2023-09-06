@@ -1,0 +1,29 @@
+Project Overview:
+-----------------
+This project is about creating an ASP.NET Web API to manage student subject marks for Rainbow School. 
+The API will enable teachers to add, update, and delete subject marks for existing students using their mobile phones. 
+
+Code Explanation:
+------------------
+Step 1: Setting Up the Project
+API will serve as the backend for the mobile app, allowing teachers to interact with student data.
+
+Step 2: Database Configuration
+To manage student data, Entity Framework Core is used to connect to a SQL Server database. 
+
+Step 3: Creating API Endpoints
+A controller named SubjectMarksController is created to define API endpoints. 
+These endpoints correspond to actions that teachers can perform on student subject marks. 
+Key CRUD (Create, Read, Update, Delete) operations are implemented for subject marks within this controller.
+For example, there's an AddSubjectMark endpoint that allows teachers to add a new subject mark for a student. 
+This is done through an HTTP POST request that sends subject mark data to the API.
+
+Step 4: Database Migrations
+Entity Framework Migrations are used to manage the database schema. 
+Migrations help in creating and updating the database based on the defined models ( subject mark) and their relationships.
+
+Step 5: Testing
+To ensure the API's functionality, testing is performed using tools like Swagger. 
+Teachers can simulate the process of adding, updating, deleting, and retrieving subject marks to verify that the API behaves as expected.
+
+GitHub Link:

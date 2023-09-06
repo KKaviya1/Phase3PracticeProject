@@ -1,0 +1,124 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using RBSchoolMarks.Data;
+using RBSchoolMarks.Models;
+
+namespace RBSchoolMarks.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class SubMarksController : ControllerBase
+    {
+        private readonly RBSMarkDbContext _context;
+
+        public SubMarksController(RBSMarkDbContext context)
+        {
+            _context = context;
+        }
+
+        // GET: api/SubMarks
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<SubMark>>> GetSubMark()
+        {
+          if (_context.SubMark == null)
+          {
+              return NotFound();
+          }
+            return await _context.SubMark.ToListAsync();
+        }
+
+        // GET: api/SubMarks/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<SubMark>> GetSubMark(int id)
+        {
+          if (_context.SubMark == null)
+          {
+              return NotFound();
+          }
+            var subMark = await _context.SubMark.FindAsync(id);
+
+            if (subMark == null)
+            {
+                return NotFound();
+            }
+
+            return subMark;
+        }
+
+        // PUT: api/SubMarks/5
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutSubMark(int id, SubMark subMark)
+        {
+            if (id != subMark.Id)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(subMark).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!SubMarkExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        // POST: api/SubMarks
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPost]
+        public async Task<ActionResult<SubMark>> PostSubMark(SubMark subMark)
+        {
+          if (_context.SubMark == null)
+          {
+              return Problem("Entity set 'RBSMarkDbContext.SubMark'  is null.");
+          }
+            _context.SubMark.Add(subMark);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetSubMark", new { id = subMark.Id }, subMark);
+        }
+
+        // DELETE: api/SubMarks/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteSubMark(int id)
+        {
+            if (_context.SubMark == null)
+            {
+                return NotFound();
+            }
+            var subMark = await _context.SubMark.FindAsync(id);
+            if (subMark == null)
+            {
+                return NotFound();
+            }
+
+            _context.SubMark.Remove(subMark);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        private bool SubMarkExists(int id)
+        {
+            return (_context.SubMark?.Any(e => e.Id == id)).GetValueOrDefault();
+        }
+    }
+}
