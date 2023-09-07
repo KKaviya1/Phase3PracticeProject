@@ -1,0 +1,28 @@
+Introduction:
+-------------
+ASP.NET MVC application has been developed to help Rainbow School analyze and display statistics based on the marks obtained by students in a class. 
+The application utilizes the Model-View-Controller (MVC) architecture to efficiently manage data and user interface components. 
+Using LINQ, the application calculates and presents various statistics, including the average marks obtained by students.
+
+Model - Student.cs:
+A model class, Student, represents student data with properties such as Id, Name, and Marks.
+create another model class StudentStatistics
+
+Controller - StudentsController.cs:
+The StudentsController is responsible for handling user requests and coordinating data retrieval and presentation.
+It contains sample student data, which can be replaced with a database or dynamic data source.
+Actions in this controller calculate and display statistics.
+The AverageMarks action calculates the average marks obtained by students using LINQ's Average method.
+
+Views:
+Views are responsible for rendering the user interface.
+The application has a view named Stats.cshtml inside the "Students" folder, which displays the average marks to the user.
+
+Users can access the application by running it in a web browser.
+The application can be expanded to include more statistics, such as highest and lowest marks, by adding additional actions in the controller and corresponding views.
+
+Conclusion:
+ASP.NET MVC application provides Rainbow School with a user-friendly interface to analyze student performance statistics efficiently. 
+It serves as a foundation for further enhancements and customization, making it a valuable tool for educational institutions to gain insights into their students' academic performanc
+
+GitHub Link:
