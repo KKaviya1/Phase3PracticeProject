@@ -25,4 +25,4 @@ Conclusion:
 ASP.NET MVC application provides Rainbow School with a user-friendly interface to analyze student performance statistics efficiently. 
 It serves as a foundation for further enhancements and customization, making it a valuable tool for educational institutions to gain insights into their students' academic performanc
 
-GitHub Link:
+GitHub Link:https://github.com/KKaviya1/Phase3PracticeProject/tree/master/Section%207
